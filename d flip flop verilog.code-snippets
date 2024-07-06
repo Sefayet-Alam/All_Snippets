@@ -1,0 +1,22 @@
+{
+	"d flip flop verilog": {
+		"prefix": "d flip flop verilog",
+		"body": [
+		  "module d_ff",
+		  "(",
+		  "    input wire clk,",
+		  "    input wire d,",
+		  "    output reg q",
+		  ");",
+		  "",
+		  "    always @(posedge clk) //posedge means positive edge",
+		  "    begin",
+		  "        q <= d;",
+		  "    end",
+		  "",
+		  "endmodule",
+		  ""
+		],
+		"description": "d flip flop verilog"
+	  }
+}

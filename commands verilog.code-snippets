@@ -1,0 +1,11 @@
+{
+	"commands verilog": {
+		"prefix": "commands verilog",
+		"body": [
+		  "iverilog Adder1bit.v Adder1bit_tb.v",
+		  "vvp a.out",
+		  "gtkwave test.vcd & "
+		],
+		"description": "commands verilog"
+	  }
+}

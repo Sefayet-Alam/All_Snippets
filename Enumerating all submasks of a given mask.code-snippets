@@ -1,0 +1,13 @@
+{
+	"Enumerating all submasks of a given mask¶": {
+		"prefix": "Enumerating all submasks of a given mask¶",
+		"body": [
+		  " for(ll i=0;i<(1LL<<n);i++){",
+		  "        ll j = ((1 << n) - 1) ^ i;",
+		  "		for (int k = j; k; k = (k - 1) & j)",
+		  "			dp[i ^ k] = max(dp[i ^ k], dp[i] + cost[k]);",
+		  "    }"
+		],
+		"description": "Enumerating all submasks of a given mask¶"
+	  }
+}

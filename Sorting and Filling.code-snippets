@@ -1,0 +1,19 @@
+{
+	"Sorting and filling": {
+		"prefix": "Sorting and filling",
+		"body": [
+		  "/// SORTING AND FILLING",
+		  "",
+		  "#define asort(a) sort(a, a + n)",
+		  "#define dsort(a) sort(a, a + n, greater<int>())",
+		  "#define vasort(v) sort(v.begin(), v.end());",
+		  "#define vdsort(v) sort(v.begin(), v.end(), greater<ll>());",
+		  "#define rev(x) reverse(all(x))",
+		  "#define sortall(x) sort(all(x))",
+		  "#define mem(a, b) memset(a, b, sizeof(a))",
+		  "#define all(x) x.begin(), x.end()",
+		  "#define rev(x) reverse(all(x))"
+		],
+		"description": "Sorting and filling"
+	  }
+}

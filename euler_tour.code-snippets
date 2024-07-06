@@ -1,0 +1,19 @@
+{
+	"Euler_tour": {
+		"prefix": "Euler_tour",
+		"body": [
+		  "vector<ll>g[N];",
+		  "vector<ll>in(N),out(N);",
+		  "ll timer;",
+		  "void euler_tour(ll now,ll prev){",
+		  "    in[now]=timer++;",
+		  "    for(auto child:g[now]){",
+		  "        if(child!=prev) euler_tour(child,now);",
+		  "    }",
+		  "    out[now]=timer;",
+		  "}",
+		  " "
+		],
+		"description": "Euler_tour"
+	  }
+}

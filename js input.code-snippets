@@ -1,0 +1,21 @@
+{
+"js input": {
+  "prefix": "js input",
+  "body": [
+    "function main (input) {",
+    "    if(isEven(input)==true) console.log(\"The number is Even.\")",
+    "        else console.log(\"The number is Odd.\")",
+    "}",
+    "",
+    "let input = \"\";",
+    "process.stdin.on('data', (chunk) => {",
+    "    input += chunk;",
+    "});",
+    "",
+    "process.stdin.on('end', () => {",
+    "    main(input.trim());",
+    "});"
+  ],
+  "description": "js input"
+}
+}

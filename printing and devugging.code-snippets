@@ -1,0 +1,18 @@
+{
+	"Printing": {
+		"prefix": "Printing",
+		"body": [
+		  "/// PRINTING",
+		  "",
+		  "#define deb(x) cout << #x << \"=\" << x << endl",
+		  "#define deb2(x, y) cout << #x << \"=\" << x << \",\" << #y << \"=\" << y << endl",
+		  "#define nn '\\n'",
+		  "#define pfl(x) printf(\"%lld\\n\", x)",
+		  "#define pcas(i) printf(\"Case %lld: \", i)",
+		  "#define Setpre(n) cout << fixed << setprecision(n)",
+		  "#define itr(it, a) for (auto it = a.begin(); it != a.end(); it++)",
+		  "#define debug printf(\"I am here\\n\")"
+		],
+		"description": "Printing"
+	  }
+}

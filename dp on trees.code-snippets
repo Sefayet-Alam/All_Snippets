@@ -1,0 +1,26 @@
+{
+	"dp on trees": {
+  "prefix": "dp on trees (find maximum matching in tree)",
+  "body": [
+    "",
+    "vector<ll>g[N];",
+    "ll dp[N][2];",
+    "",
+    "void dfs(ll vertex,ll par=-1){",
+    "  ",
+    "    for(ll child: g[vertex]){",
+    "       ",
+    "        if(child==par) continue;",
+    "        dfs(child,vertex);",
+    "        dp[vertex][0]+=max(dp[child][0],dp[child][1]);",
+    "    }",
+    "    for(ll child: g[vertex]){",
+    "        if(child==par) continue;",
+    "        dp[vertex][1]=max(dp[vertex][1],dp[child][0]+1+dp[vertex][0]-max(dp[child][0],dp[child][1]));",
+    "    }",
+    "",
+    "}"
+  ],
+  "description": "dp on trees"
+}
+}

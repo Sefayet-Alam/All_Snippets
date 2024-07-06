@@ -1,0 +1,15 @@
+{
+	"SOS suboptimal (3^n)": {
+		"prefix": "SOS suboptimal (3^n)",
+		"body": [
+			"int n = 20;",
+			"vector<int> a(1 << n);",
+			"vector<int> sos(1 << n);",
+			"for (int i = 0; i < (1 << n); i++) {",
+    "	// iterate over all subsets of i directly",
+    "	for (int j = (i - 1) & i; j >= 0; j = (j - 1) & i) { sos[i] += a[j]; }",
+			"}"
+		],
+		"description": "SOS suboptimal (3^n)"
+	}
+}
