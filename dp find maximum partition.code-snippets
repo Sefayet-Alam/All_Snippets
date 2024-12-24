@@ -1,0 +1,34 @@
+{
+	"dp find maximum partition": {
+		"prefix": "given an array maximum partition is max(sum patitioned elements,maxmimum sum of partitions)",
+		"body": [
+			"ll n;",
+			"vector<ll> arr(100005);",
+			"bool check(ll s) {",
+			"    vector<vector<ll>> dp(2, vector<ll>(n + 1 , 1e17));",
+			"    dp[0][0] = dp[0][1] = 0;",
+			" ",
+			"    ll curSum = 0 , j = 0;",
+			"    multiset<ll> st;",
+			"    st.insert(0);",
+			"    for(int i = 1;i <= n;i++) {",
+			"        if(arr[i] > s) return false;",
+			"        dp[0][i] = min(dp[0][i - 1], dp[1][i - 1]) + arr[i];",
+			"        curSum += arr[i];",
+			"        while(curSum > s) {",
+			"            curSum -= arr[j];",
+			"            if(j - 1 >= 0) st.erase(st.find(dp[0][j - 1]));",
+			"            j++;",
+			"        }",
+			"        dp[1][i] = *st.begin();",
+			"        st.insert(dp[0][i]);",
+			"    }",
+			"    //debug() ,dbg(s), dbg(dp);",
+			"    if(dp[0][n] <= s || dp[1][n] <= s) return true;",
+			"    else return false;",
+			" ",
+			"}"
+		],
+		"description": "dp find maximum partition"
+	}
+}

@@ -1,0 +1,43 @@
+{
+	"Optimization for vector of pairs with a condition": {
+  "prefix": "monotonic optmization",
+  "body": [
+    "// for (ll i = 0; i <n; i++)",
+    "        // {",
+    "        //     for (ll j = i+1 ; j <n; j++)",
+    "        //     {",
+    "        //         if (vec[j].second >= vec[i].second)",
+    "        //         {",
+    "        //             ans += (vec[i].first - vec[j].first);",
+    "        //         }",
+    "        //     }",
+    "        // }",
+    "",
+    "        // in other words",
+    "        // for a value i, we need to find j<i",
+    "        // such that vec[j].second <= vec[i].second, for such elements",
+    "        // ans+= count*vec[i].first - sum of vec[j].first",
+    "        // we'll first add all count*vec[i].first",
+    "        // then we'll dedeuct sum of vec[j].first",
+    "        // to do this, we'll use contribution",
+    "",
+    "        ll ans = 0;",
+    "        ordered_set<pll> os;",
+    "        for (ll i = 0; i < n; i++)",
+    "        {",
+    "            ll cnt = os.order_of_key({vec[i].second + 1, -1}); // to search  vec[j].second<=vec[i].second",
+    "            ans += cnt * 1ll * vec[i].first;",
+    "            os.insert(make_pair(vec[i].second, i));",
+    "        }",
+    "        os.clear();",
+    "        for (ll i = n - 1; i >= 0; i--)",
+    "        {",
+    "            ll cnt = (os.size()) - os.order_of_key({vec[i].second - 1, n});",
+    "            ans -= cnt * 1ll * vec[i].first; // total contribution of negative ones",
+    "            os.insert(make_pair(vec[i].second, i));",
+    "        }",
+    "        cout<<ans<<nn;"
+  ],
+  "description": "Optimization for vector of pairs with a condition"
+}
+}

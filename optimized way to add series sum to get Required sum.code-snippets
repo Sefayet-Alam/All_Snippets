@@ -1,0 +1,40 @@
+{
+	"1+2+3+...+n1,1+2+..+n2 say there are many series like this u need to take some series and get sum s in the minimum space": {
+  "prefix": "optimized way to add series sum to get Required sum",
+  "body": [
+    "",
+    "int getSum(int a,int d,int n){",
+    "    return n*(2*a+(n-1)*d)/2;",
+    "}",
+    " ",
+    "",
+    "int ss[N];",
+    "void init(){",
+    "    for(int i=1;i<N;i++){",
+    "        ss[i] = i*(i+1)/2;",
+    "    }",
+    "}",
+    " ",
+    " ",
+    "int dp[N];",
+    "int par[N];",
+    "void initDp(){",
+    "    dp[0] = 0;",
+    "    for(int i=1;i<N;i++) dp[i] = N*2;",
+    " ",
+    "    for(int i=0;i<N;i++){",
+    "        for(int j=1;j<N;j++){",
+    "            int nxt = i+ss[j];",
+    "            if( nxt >=N ) break;",
+    "            int st = dp[i] + j+1;",
+    "            if( dp[nxt]>st ){",
+    "                dp[nxt] = st;",
+    "                par[nxt] = j;",
+    "            }",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "description": "1+2+3+...+n1,1+2+..+n2 say there are many series like this u need to take some series and get sum s in the minimum space"
+}
+}
